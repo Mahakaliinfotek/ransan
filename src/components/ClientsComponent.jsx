@@ -94,6 +94,7 @@ export default function ClientsComponent() {
     return (
         <Box
             sx={{
+                backgroundColor: "#fff",
 
                 width: "100%",
                 maxWidth: "1400px",
@@ -102,14 +103,14 @@ export default function ClientsComponent() {
                 py: { xs: 2, md: 2 },
             }}
         >
-         
+
             <Typography
                 sx={{
                     fontSize: { xs: "28px", md: "40px" },
                     fontWeight: 700,
                     textAlign: "center",
                     mb: 5,
-                    fontFamily: "Manrope",
+                  fontFamily: "Manrope !important",
                     color: "#0A0F1C",
                 }}
             >
@@ -166,7 +167,7 @@ export default function ClientsComponent() {
                                     sx={{
                                         fontSize: "25px",
                                         fontWeight: 600,
-                                        fontFamily: "Manrope",
+                                      fontFamily: "Manrope !important",
                                         color: "#0A0F1C",
                                         py: 4,
                                     }}

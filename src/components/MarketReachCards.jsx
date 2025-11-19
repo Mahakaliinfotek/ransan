@@ -1,3 +1,4 @@
+
 import { Box, Typography, Paper } from "@mui/material";
 import PublicIcon from "@mui/icons-material/Public";
 import FactoryIcon from "@mui/icons-material/Factory";
@@ -8,6 +9,7 @@ export default function MarketReachCards() {
     return (
         <Box
             sx={{
+                backgroundColor: "#fff",
                 width: "100%",
                 maxWidth: "1400px",
                 mx: "auto",
@@ -21,7 +23,7 @@ export default function MarketReachCards() {
                     fontSize: { xs: "28px", md: "40px" },
                     fontWeight: 700,
                     color: "#0A0F1C",
-                    fontFamily: "Manrope",
+                    fontFamily: "Manrope !important",
                     mb: 4,
                     textAlign: "left",
                 }}
@@ -29,20 +31,21 @@ export default function MarketReachCards() {
                 Markets & Reach
             </Typography>
 
-            {/* CARD WRAPPER */}
+            {/* Cards */}
             <Box
                 sx={{
                     display: "flex",
                     flexWrap: "wrap",
                     gap: 3,
-                    justifyContent: "left",
+                    justifyContent: "space-between",
                 }}
             >
+
                 {/* 1️⃣ CORE INDUSTRIES */}
                 <Paper
                     elevation={0}
                     sx={{
-                        width: { xs: "100%", sm: "48%", md: "30%" },
+                        width: { xs: "100%", sm: "48%", md: "23%" },
                         p: 3,
                         borderRadius: "14px",
                         border: "1px solid #E6E8EC",
@@ -50,11 +53,11 @@ export default function MarketReachCards() {
                 >
                     <FactoryIcon sx={{ fontSize: 36, color: "#3B0A6A", mb: 1 }} />
                     <Typography
-                        sx={{ fontSize: "18px", fontWeight: 700, color: "#0A0F1C", mb: 1 }}
+                        sx={{ fontSize: "18px", fontWeight: 700, color: "#0A0F1C", mb: 1, fontFamily: "Manrope !important", }}
                     >
                         Core Industries
                     </Typography>
-                    <Typography sx={{ fontSize: "14px", color: "#677189", lineHeight: 1.6 }}>
+                    <Typography sx={{ fontSize: "14px", color: "#677189", lineHeight: 1.6, fontFamily: "Manrope !important", }}>
                         Rolling mills, sponge iron, cement, fertilizers, chemicals, and paper.
                     </Typography>
                 </Paper>
@@ -63,7 +66,7 @@ export default function MarketReachCards() {
                 <Paper
                     elevation={0}
                     sx={{
-                        width: { xs: "100%", sm: "48%", md: "30%" },
+                        width: { xs: "100%", sm: "48%", md: "23%" },
                         p: 3,
                         borderRadius: "14px",
                         border: "1px solid #E6E8EC",
@@ -71,20 +74,20 @@ export default function MarketReachCards() {
                 >
                     <ForestIcon sx={{ fontSize: 36, color: "#3B0A6A", mb: 1 }} />
                     <Typography
-                        sx={{ fontSize: "18px", fontWeight: 700, color: "#0A0F1C", mb: 1 }}
+                        sx={{ fontSize: "18px", fontWeight: 700, color: "#0A0F1C", mb: 1, fontFamily: "Manrope !important", }}
                     >
                         Other Segments
                     </Typography>
-                    <Typography sx={{ fontSize: "14px", color: "#677189", lineHeight: 1.6 }}>
+                    <Typography sx={{ fontSize: "14px", color: "#677189", lineHeight: 1.6, fontFamily: "Manrope !important", }}>
                         Tea gardens, brickfields, and other industrial consumers.
                     </Typography>
                 </Paper>
 
-                {/* 3️⃣ GEOGRAPHY */}
+                {/* 3️⃣ SERVICE GEOGRAPHY */}
                 <Paper
                     elevation={0}
                     sx={{
-                        width: { xs: "100%", sm: "48%", md: "30%" },
+                        width: { xs: "100%", sm: "48%", md: "23%" },
                         p: 3,
                         borderRadius: "14px",
                         border: "1px solid #E6E8EC",
@@ -92,20 +95,20 @@ export default function MarketReachCards() {
                 >
                     <PublicIcon sx={{ fontSize: 36, color: "#3B0A6A", mb: 1 }} />
                     <Typography
-                        sx={{ fontSize: "18px", fontWeight: 700, color: "#0A0F1C", mb: 1 }}
+                        sx={{ fontSize: "18px", fontWeight: 700, color: "#0A0F1C", mb: 1, fontFamily: "Manrope !important", }}
                     >
                         Service Geography
                     </Typography>
-                    <Typography sx={{ fontSize: "14px", color: "#677189", lineHeight: 1.6 }}>
+                    <Typography sx={{ fontSize: "14px", color: "#677189", lineHeight: 1.6, fontFamily: "Manrope !important", }}>
                         Chhattisgarh, Bihar, Jharkhand, West Bengal, Assam, Meghalaya, Nagaland.
                     </Typography>
                 </Paper>
 
-                {/* 4️⃣ CROSS-BORDER */}
+                {/* 4️⃣ CROSS-BORDER REACH */}
                 <Paper
                     elevation={0}
                     sx={{
-                        width: { xs: "100%", sm: "48%", md: "30%" },
+                        width: { xs: "100%", sm: "48%", md: "23%" },
                         p: 3,
                         borderRadius: "14px",
                         border: "1px solid #E6E8EC",
@@ -113,14 +116,15 @@ export default function MarketReachCards() {
                 >
                     <TravelExploreIcon sx={{ fontSize: 36, color: "#3B0A6A", mb: 1 }} />
                     <Typography
-                        sx={{ fontSize: "18px", fontWeight: 700, color: "#0A0F1C", mb: 1 }}
+                        sx={{ fontSize: "18px", fontWeight: 700, color: "#0A0F1C", mb: 1, fontFamily: "Manrope !important", }}
                     >
                         Cross-border Reach
                     </Typography>
-                    <Typography sx={{ fontSize: "14px", color: "#677189", lineHeight: 1.6 }}>
+                    <Typography sx={{ fontSize: "14px", color: "#677189", lineHeight: 1.6, fontFamily: "Manrope !important", }}>
                         Extending supply and logistics capabilities to Nepal.
                     </Typography>
                 </Paper>
+
             </Box>
         </Box>
     );

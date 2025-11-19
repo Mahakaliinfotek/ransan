@@ -7,6 +7,7 @@ export default function BusinessFocus() {
     return (
         <Box
             sx={{
+                backgroundColor: "#fff",
                 width: "100%",
                 maxWidth: "1400px",
                 mx: "auto",
@@ -21,7 +22,7 @@ export default function BusinessFocus() {
                     fontWeight: 700,
                     mb: 2,
                     color: "#0A0F1C",
-                    fontFamily: "Manrope, sans-serif",
+                    fontFamily: "Manrope !important",
                 }}
             >
                 Business Focus
@@ -36,7 +37,7 @@ export default function BusinessFocus() {
                     maxWidth: "1200px",
                     lineHeight: 1.6,
                     mb: 5,
-                    fontFamily: "Manrope, sans-serif",
+                    fontFamily: "Manrope !important",
                 }}
             >
                 RANSAN is a coal and coke solutions company with core strengths in fuel supply management, trading, and railway liaisoning, serving India’s energy and industrial ecosystem since 2003. We specialize in moving North East–mined coal from Lakwa and Bhojo sidings to power industries across India, ensuring quality fuel supply and full materialization of freight movement for Indian Railways..
@@ -69,18 +70,18 @@ export default function BusinessFocus() {
                             fontWeight: 700,
                             mb: 1,
                             color: "#0A0F1C",
-                            fontFamily: "Manrope",
+                            fontFamily: "Manrope !important",
                         }}
                     >
                         20+ Years of Experience
                     </Typography>
-                    <Typography sx={{ color: "#677189", fontSize: "14px" }}>
+                    <Typography sx={{ color: "#677189", fontSize: "14px", fontFamily: "Manrope !important", }}>
                         Decades of proven expertise in managing complex logistics and trading
                         operations.
                     </Typography>
                 </Box>
 
-                {/* 2️⃣ Nationwide Network */}
+
                 <Box
                     sx={{
                         flex: "1 1 300px",
@@ -97,12 +98,12 @@ export default function BusinessFocus() {
                             fontWeight: 700,
                             mb: 1,
                             color: "#0A0F1C",
-                            fontFamily: "Manrope",
+                            fontFamily: "Manrope !important",
                         }}
                     >
                         Nationwide Network
                     </Typography>
-                    <Typography sx={{ color: "#677189", fontSize: "14px" }}>
+                    <Typography sx={{ color: "#677189", fontSize: "14px", fontFamily: "Manrope !important", }}>
                         A robust and strategic presence across key industrial and transport
                         hubs in India.
                     </Typography>
@@ -126,11 +127,12 @@ export default function BusinessFocus() {
                             mb: 1,
                             color: "#0A0F1C",
                             fontFamily: "Manrope",
+                            fontFamily: "Manrope !important",
                         }}
                     >
                         Unmatched Reliability
                     </Typography>
-                    <Typography sx={{ color: "#677189", fontSize: "14px" }}>
+                    <Typography sx={{ color: "#677189", fontSize: "14px", fontFamily: "Manrope !important", }}>
                         Commitment to on-time delivery and operational excellence you can
                         depend on.
                     </Typography>

@@ -4,16 +4,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
 
-// Image imports
-import Banner1 from "../../assets/images/banner1.png";
-import Banner2 from "../../assets/images/banner2.png";
-import Banner3 from "../../assets/images/banner3.png";
-import Banner4 from "../../assets/images/banner4.png";
-import Banner5 from "../../assets/images/banner5.png";
+
+
 import Banner6 from "../../assets/images/banner6.png";
-import Banner7 from "../../assets/images/banner7.png";
-import Banner8 from "../../assets/images/banner8.png";
-import Banner9 from "../../assets/images/banner9.png";
+
 
 const slides = [
     // { img: Banner1, name: "MAHAKALI ESTATE" },

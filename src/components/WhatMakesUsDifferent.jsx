@@ -37,6 +37,7 @@ export default function WhatMakesUsDifferent() {
     return (
         <Box
             sx={{
+                backgroundColor: "#fff",
                 width: "100%",
                 maxWidth: "1400px",
                 mx: "auto",
@@ -59,9 +60,10 @@ export default function WhatMakesUsDifferent() {
             </Typography>
 
             {/* Responsive Cards Container */}
-            <Box
+            {/* <Box
                 sx={{
                     display: "grid",
+                    justifyItems: "center",
                     gap: 3,
                     gridTemplateColumns: {
                         xs: "1fr",
@@ -90,7 +92,7 @@ export default function WhatMakesUsDifferent() {
                                 fontSize: "18px",
                                 fontWeight: 700,
                                 color: "#0A0F1C",
-                                fontFamily: "Manrope",
+                                fontFamily: "Manrope !important",
                             }}
                         >
                             {item.title}
@@ -98,6 +100,56 @@ export default function WhatMakesUsDifferent() {
 
                         <Typography
                             sx={{
+                                fontFamily: "Manrope !important",
+                                fontSize: "14px",
+                                color: "#677189",
+                                lineHeight: 1.5,
+                            }}
+                        >
+                            {item.desc}
+                        </Typography>
+                    </Box>
+                ))}
+            </Box> */}
+            <Box
+                sx={{
+                    display: "flex",
+                    flexWrap: "wrap",
+                    justifyContent: "center",
+                    gap: 4,
+                }}
+            >
+                {Points.map((item, index) => (
+                    <Box
+                        key={index}
+                        sx={{
+                            width: { xs: "100%", sm: "45%", md: "30%" },
+                            maxWidth: "420px",
+                            p: 3,
+                            borderRadius: "12px",
+                            border: "1px solid #E6E8EC",
+                            backgroundColor: "#FFFFFF",
+                            display: "flex",
+                            flexDirection: "column",
+                            gap: 1.5,
+                        }}
+                    >
+                        {item.icon}
+
+                        <Typography
+                            sx={{
+                                fontSize: "18px",
+                                fontWeight: 700,
+                                color: "#0A0F1C",
+                                fontFamily: "Manrope !important",
+                            }}
+                        >
+                            {item.title}
+                        </Typography>
+
+                        <Typography
+                            sx={{
+                                fontFamily: "Manrope !important",
                                 fontSize: "14px",
                                 color: "#677189",
                                 lineHeight: 1.5,
@@ -108,6 +160,10 @@ export default function WhatMakesUsDifferent() {
                     </Box>
                 ))}
             </Box>
+
+
+
+
         </Box>
     );
 }

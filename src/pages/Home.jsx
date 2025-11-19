@@ -3,7 +3,7 @@ import HeroSection from "../components/HeroSection";
 
 
 import { Box } from "@mui/material";
-import Footer from "../components/Footer";
+
 import BusinessFocus from "../components/BusinessFocus";
 import CoreOfferings from "../components/CoreOfferings";
 import MarketsReach from "../components/MarketsReach";
@@ -21,6 +21,7 @@ import BusinessesSection from "../components/homepage/BusinessesSection";
 import HistorySection from "../components/homepage/HistorySection";
 import SustainabilitySection from "../components/homepage/SustainabilitySection";
 import MediaCSRSection from "../components/homepage/MediaCSRSection";
+import Footer from "../layouts/Footer";
 
 export default function HomePage() {
     return (
@@ -29,6 +30,7 @@ export default function HomePage() {
 
             <Header />
             <HeroSlider />
+            <CompanyStrip />
 
             < BusinessFocus />
             <CoreOfferings />
@@ -39,7 +41,7 @@ export default function HomePage() {
             {/* <Footer /> */}
 
 
-            <CompanyStrip />
+
             <PeopleCultureSlider />
             <VisionSection />
             <BusinessesSection />
@@ -47,6 +49,7 @@ export default function HomePage() {
             <SustainabilitySection />
             <MediaCSRSection />
             <CompanyStrip />
+            <Footer />
 
 
         </>

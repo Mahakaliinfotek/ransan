@@ -8,7 +8,7 @@ export default function CoreOfferings() {
             img: "https://lh3.googleusercontent.com/aida-public/AB6AXuBYeKYrP5bG8un8GRr7bPrSK7IopiUkRVdIIIn-XXIB4qHH4wTKaEpKm8_EBHWbA6tmV-05VGK4GmWF1VVrxe3Frc56JGOSI6Yakc8qVqWzHZ5Ze2VeJWQaPl1W2oKG1KQOZeNj4iejBE03_5nVppWGZ2N8Bxlhh5nUlf0s0gF6jY-u_orJyKGoHyFXCrHDSNKpkizgAg9CnuXwQG_cDii47clO-ALCVT9-fQTMMDdYHEGGLlY_ZvOLhOnQb8u7hNrPHNAMrGCQb8E",
         },
         {
-            title: "Fuel Supply Management:",
+            title: "Fuel Supply Management",
             desc: "Integrated sourcing, loading, and delivery solutions that enable nationwide coal movement from the North East to key industrial clusters.",
             img: "https://lh3.googleusercontent.com/aida-public/AB6AXuAUY3FL1b8cuJypBJnzJkcCdwUwrfaJwQDytECOgxnwENF70bEI-D3ojlRCd2srgRSgk6giGQOKSYBsS85iGyyX794VFbxv5Dbpkj9DquDaADQUvfG40JPYujYeexs0i0qZAvL6GrBs5DKOzjV8HW87GvjVNTHE0a-6ZkJoGRNmE0jzenTY8TqBh2SAQsAE8g6g3fKAf3cNNbBAPA2hT6zJ2E4d4sjL1CegOKx-TlTa51NJf4fV7tKjL7zApS4LUKCwCyrmAHykklY",
         },
@@ -22,6 +22,7 @@ export default function CoreOfferings() {
     return (
         <Box
             sx={{
+                backgroundColor: "#fff",
                 width: "100%",
                 maxWidth: "1400px",
                 mx: "auto",
@@ -36,7 +37,7 @@ export default function CoreOfferings() {
                     fontWeight: 700,
                     mb: 4,
                     color: "#0A0F1C",
-                    fontFamily: "Manrope, sans-serif",
+                    fontFamily: "Manrope !important",
                 }}
             >
                 Core Offerings
@@ -65,6 +66,7 @@ export default function CoreOfferings() {
                             src={item.img}
                             alt={item.title}
                             sx={{
+
                                 width: "100%",
                                 height: "auto",
                                 borderRadius: "16px",
@@ -80,7 +82,7 @@ export default function CoreOfferings() {
                                 fontSize: "20px",
                                 fontWeight: 700,
                                 color: "#0A0F1C",
-                                fontFamily: "Manrope",
+                                fontFamily: "Manrope !important",
                             }}
                         >
                             {item.title}
@@ -93,7 +95,7 @@ export default function CoreOfferings() {
                                 color: "#5A6273",
                                 fontSize: "15px",
                                 lineHeight: 1.5,
-                                fontFamily: "Manrope",
+                                fontFamily: "Manrope !important",
                             }}
                         >
                             {item.desc}

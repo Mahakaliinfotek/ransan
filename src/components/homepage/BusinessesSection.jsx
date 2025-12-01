@@ -2,15 +2,15 @@ import { Box, Typography } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 // Replace these with your actual images
-import img1 from "../../assets/images/business/muplbg.png";
-import img2 from "../../assets/images/business/otobg.png";
-import img3 from "../../assets/images/business/izbg.png";
-import img4 from "../../assets/images/business/mibg.png";
-import img5 from "../../assets/images/business/mibg2.png";
-import img6 from "../../assets/images/business/rsebg.png";
-import img7 from "../../assets/images/business/mebg.png";
-import img8 from "../../assets/images/business/kpbg.png";
-import img9 from "../../assets/images/business/munbg.png";
+import img1 from "../../assets/images/business/muplbg.webp";
+import img2 from "../../assets/images/business/otobg.webp";
+import img3 from "../../assets/images/business/izbg.webp";
+import img4 from "../../assets/images/business/mibg.webp";
+import img5 from "../../assets/images/business/mibg2.webp";
+import img6 from "../../assets/images/business/rsebg.webp";
+import img7 from "../../assets/images/business/mebg.webp";
+import img8 from "../../assets/images/business/kpbg.webp";
+import img9 from "../../assets/images/business/munbg.webp";
 
 
 // Replace these with real logos
@@ -31,51 +31,61 @@ export default function BusinessesSection() {
             logo: logo1,
             bg: img1,
             text: "Four decades of trusted coal and coke solutions since 1984.",
+            link: "https://www.mahakaliudyog.com/",
         },
         {
             logo: logo2,
             bg: img2,
             text: "End-to-end bulk logistics and stevedoring experts across India’s East Coast.",
+            link: "https://otovizag.com/",
         },
         {
             logo: logo3,
             bg: img3,
             text: "Where buyers discover more and sellers grow faster.",
+            link: "https://indiazona.in",
         },
         {
             logo: logo4,
             bg: img4,
             text: "Building reliable digital systems.",
+            link: "https://mahakaliinfotek.com/",
         },
         {
             logo: logo5,
             bg: img5,
             text: "Reliable coke supply with precise screening for steel industries.",
+            link: "https://mahakaliinternational.com/",
         },
         {
             logo: logo6,
             bg: img6,
             text: "Powering industries with reliable coal solutions since 2003.",
-        },
-        {
-            logo: logo7,
-            bg: img7,
-            text: "Turning land into productive and sustainable assets.",
-        },
-        {
-            logo: logo8,
-            bg: img8,
-            text: "Reliable coal supply from Indonesia with consistent quality.",
+            link: "https://ransanenterprises.com/",
         },
         {
             logo: logo9,
             bg: img9,
             text: "Reliable limestone and minerals supply from Oman.",
+            link: "https://munminmet.om/",
         },
+        {
+            logo: logo8,
+            bg: img8,
+            text: "Reliable coal supply from Indonesia with consistent quality.",
+            link: "https://krishnaresource.com/",
+        },
+        {
+            logo: logo7,
+            bg: img7,
+            text: "Turning land into productive and sustainable assets.",
+            link: "https://mahakaliestate.com/",
+        },
+
     ];
 
     return (
-        <Box id="businesses-section"  sx={{ width: "100%", py: 6, px: { xs: 2, md: 4 } }} >
+        <Box id="businesses-section" sx={{ width: "100%", py: 6, px: { xs: 2, md: 4 } }} >
             {/* Header */}
             <Typography
                 sx={{
@@ -127,26 +137,30 @@ export default function BusinessesSection() {
                                 boxShadow: "0px 4px 12px rgba(0,0,0,0.25)",
                             },
                         }}
+                        onClick={() => window.open(item.link, "_blank")}
                     >
                         {/* Background Image */}
                         <Box
                             sx={{
-                                position: "absolute",
+                                position: 'relative',
+                                inset: 0,
                                 width: "100%",
                                 height: "100%",
                                 backgroundImage: `url(${item.bg})`,
                                 backgroundSize: "cover",
                                 backgroundPosition: "center",
-                               
+                                zIndex: 0
+
                             }}
                         />
 
-                        {/* Gradient Overlay */}
+                        {/* Overlay */}
                         <Box
                             sx={{
                                 position: "absolute",
-                                width: "100%",
-                                height: "100%",
+                                inset: 0,
+                                background:'linear-gradient(0deg, rgba(0, 0, 0, 0.80) 2%, rgba(37.93, 36.71, 36.71, 0.80) 51%, rgba(102, 102, 102, 0) 100%)',
+                                zIndex: 1,
                             }}
                         />
 
@@ -160,6 +174,7 @@ export default function BusinessesSection() {
                                 width: "85%",
                                 textAlign: "center",
                                 color: "#fff",
+                                zIndex:2
                             }}
                         >
                             {/* Logo */}

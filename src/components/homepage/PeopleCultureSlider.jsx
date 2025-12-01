@@ -106,10 +106,12 @@ export default function PeopleCultureSlider() {
                             <Box
                                 sx={{
                                     position: "relative",
-                                    height: 300,
+                                    height: 340,
                                     // borderRadius: 2,
                                     overflow: "hidden",
                                     cursor: "pointer",
+                                    background: 'linear-gradient(0deg, rgba(0, 0, 0, 0.88) 0%, rgba(102, 102, 102, 0) 100%)'
+
                                 }}
                                 onClick={() => navigate("/legacy-leadership")}
                             >
@@ -121,8 +123,24 @@ export default function PeopleCultureSlider() {
                                         width: "100%",
                                         height: "100%",
                                         objectFit: "cover",
+
                                     }}
                                 />
+                                {/* FULL IMAGE OVERLAY GRADIENT */}
+                                <Box
+                                    sx={{
+                                        position: "absolute",
+                                        top: 0,
+                                        left: 0,
+                                        width: "100%",
+                                        height: "100%",
+                                        background:
+                                            "linear-gradient(0deg, rgba(0, 0, 0, 0.88) 0%, rgba(102, 102, 102, 0) 100%)",
+                                        zIndex: 2,
+                                        pointerEvents: "none",
+                                    }}
+                                />
+
 
                                 {/* Overlay Gradient */}
                                 <Box
@@ -134,7 +152,12 @@ export default function PeopleCultureSlider() {
                                         p: 3,
                                         background:
                                             "linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.8) 100%)",
+                                        zIndex: 3,
                                         color: "#fff",
+                                        transition: "transform 0.3s ease",
+                                        "&:hover": {
+                                            transform: "scale(1.02)",
+                                        }
                                     }}
                                 >
                                     <Typography

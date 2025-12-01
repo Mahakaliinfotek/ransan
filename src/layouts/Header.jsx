@@ -28,37 +28,37 @@ export default function Header({ isDark = true }) {
     const navigate = useNavigate();
 
     const handleNavigate = (path) => {
-    if (path === "/businesses") {
-        if (window.location.pathname === "/") {
-            // Already on homepage → scroll only
-            document.getElementById("businesses-section")?.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-            });
-        } else {
-            // Navigate to homepage → then scroll after load
-            navigate("/", { state: { scrollTo: "businesses-section" } });
+        if (path === "/businesses") {
+            if (window.location.pathname === "/") {
+                // Already on homepage → scroll only
+                document.getElementById("businesses-section")?.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                });
+            } else {
+                // Navigate to homepage → then scroll after load
+                navigate("/", { state: { scrollTo: "businesses-section" } });
+            }
+            return;
         }
-        return;
-    }
-    if (path === "/contact-us") {
-        if (window.location.pathname === "/") {
-            // Already on homepage → scroll only
-            document.getElementById("contact-section")?.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-            });
-        } else {
-            // Navigate to homepage → then scroll after load
-            navigate("/", { state: { scrollTo: "contact-section" } });
+        if (path === "/contact-us") {
+            if (window.location.pathname === "/") {
+                // Already on homepage → scroll only
+                document.getElementById("contact-section")?.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                });
+            } else {
+                // Navigate to homepage → then scroll after load
+                navigate("/", { state: { scrollTo: "contact-section" } });
+            }
+            return;
         }
-        return;
-    }
 
-    // Default navigation
-    navigate(path);
-    setOpen(false);
-};
+        // Default navigation
+        navigate(path);
+        setOpen(false);
+    };
 
 
     // Dynamic color based on input prop
@@ -83,19 +83,21 @@ export default function Header({ isDark = true }) {
                         maxWidth: "1600px",
                         mx: "auto",
                         width: "100%",
-                        px: { xs: 2, md: 6 }, // inner padding
+                        px: { xs: 2, md: 6 }, 
                     }}
                 >
                     <Toolbar sx={{ justifyContent: "space-between" }}>
                         {/* Logo */}
                         <Box
-                          component="img"
-                          src={logo}
-                          sx={{
-                            width:"120px",
-                            cursor: "pointer"
-                          }}
-                          onClick={() => navigate("/")}
+
+                            component="img"
+                            src={logo}
+                            sx={{
+                                backgroundColor: "#fff",
+                                width: "120px",
+                                cursor: "pointer"
+                            }}
+                            onClick={() => navigate("/")}
                         />
 
                         {/* Desktop Menu */}
@@ -189,7 +191,7 @@ export default function Header({ isDark = true }) {
 
                     {/* Contact Us Inside Drawer */}
                     <ListItemButton component="a"
-                                href={`mailto:info@mahakaliudyog.com`} sx={{ mt: 2 }}>
+                        href={`mailto:info@mahakaliudyog.com`} sx={{ mt: 2 }}>
                         <ListItemText
                             primary="Contact Us"
                             primaryTypographyProps={{

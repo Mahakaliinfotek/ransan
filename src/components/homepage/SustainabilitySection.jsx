@@ -110,6 +110,10 @@ export default function SustainabilitySection() {
                                     width: { xs: "130px", sm: "200px", md: "300px" },
                                     height: "100%",
                                     objectFit: "cover",
+                                    transition: "transform 0.3s ease",
+                                    "&:hover": {
+                                        transform: "scale(1.05)",
+                                    },
                                     // borderRadius: "18px",
                                 }}
                             />
@@ -126,6 +130,10 @@ export default function SustainabilitySection() {
                                     width: { xs: "130px", sm: "200px", md: "300px" },
                                     height: "100%",
                                     objectFit: "cover",
+                                    transition: "transform 0.3s ease",
+                                    "&:hover": {
+                                        transform: "scale(1.05)",
+                                    },
                                 }}
 
                             />
@@ -138,6 +146,10 @@ export default function SustainabilitySection() {
                                     width: { xs: "130px", sm: "200px", md: "300px" },
                                     height: "100%",
                                     objectFit: "cover",
+                                    transition: "transform 0.3s ease",
+                                    "&:hover": {
+                                        transform: "scale(1.05)",
+                                    },
                                 }}
                             />
                         </Box>

@@ -39,7 +39,7 @@ export default function WhatMakesUsDifferent() {
             sx={{
                 backgroundColor: "#fff",
                 width: "100%",
-                maxWidth: "1400px",
+                //  maxWidth: "1400px",
                 mx: "auto",
                 px: { xs: 2, md: 6 },
                 py: { xs: 2, md: 4 },

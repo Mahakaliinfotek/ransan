@@ -8,6 +8,10 @@ import LegacyLeadershipPage from './pages/LegacyLeadershipPage'
 import { Sustainability } from './pages/Sustainability'
 import Story from './pages/Story/Story'
 import { HomePageLayout } from './layouts/HomePageLayout'
+import HomePageV1 from './pages/HomeV1'
+import ContactUs from './pages/ContactUs'
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage'
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -20,9 +24,11 @@ function App() {
         <Route path="/story" element={<Story />} />
         <Route path="/about-us" element={<Story />} />
         <Route path="/" element={<HomePageLayout />}>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<HomePageV1 />} />
           <Route path="/legacy-leadership" element={<LegacyLeadershipPage />} />
           <Route path="/sustainability" element={<Sustainability />} />
+          <Route path="/contact" element={<ContactUs />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
 
 
         </Route>

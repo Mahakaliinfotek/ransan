@@ -3,6 +3,8 @@ import React from "react";
 import Header from "./Header";
 import { Outlet } from "react-router-dom";
 import Footer from "../components/common/Footer";
+import HeaderV2 from "./HeaderV2";
+import FooterV2 from "./FooterV2";
 
 
 
@@ -17,6 +19,7 @@ export const HomePageLayout = () => {
             }}
         >
             {/* Header */}
+            <HeaderV2 />
 
 
             {/* Main Content */}
@@ -32,7 +35,7 @@ export const HomePageLayout = () => {
             >
                 {/* <Header /> */}
                 <Outlet />
-                <Footer />
+                <FooterV2 />
             </Box>
 
             {/* Footer – uncomment if needed */}

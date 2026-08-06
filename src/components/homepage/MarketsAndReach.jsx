@@ -317,13 +317,14 @@ const MarketsAndReach = () => {
                             xs: "left",
                             md: "center",
                         },
+                        fontFamily: 'IBM Plex Sans',
                         fontSize: {
-                            xs: 16,
-                            sm: 25,
-                            md: 38,
+                            xs: 21,
+                            sm: 28,
+                            md: 34,
                         },
                         lineHeight: 1.15,
-                        fontWeight: 700,
+                        fontWeight: 600,
                         textTransform: "uppercase",
                         letterSpacing: "-0.02em",
                     }}

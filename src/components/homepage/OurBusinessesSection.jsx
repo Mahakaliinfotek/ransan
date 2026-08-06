@@ -3,6 +3,8 @@ import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import ArrowForwardIosRoundedIcon from "@mui/icons-material/ArrowForwardIosRounded";
 import { Link } from "react-router-dom";
+import { motion, useReducedMotion } from "framer-motion";
+const MotionBox = motion.create(Box);
 
 import logo1 from "../../assets/images/business/mupl.png";
 import logo2 from "../../assets/images/business/oto.png";
@@ -14,10 +16,34 @@ import logo7 from "../../assets/images/business/me.png";
 import logo8 from "../../assets/images/business/kp.png";
 import logo9 from "../../assets/images/business/mun.png";
 
+const gridVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.14,
+      delayChildren: 0.1,
+    },
+  },
+};
 
-
-
-
+const cardVariants = {
+  hidden: {
+    opacity: 0,
+    y: 55,
+    scale: 0.94,
+    filter: "blur(5px)",
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    filter: "blur(0px)",
+    transition: {
+      duration: 0.65,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+};
 
 
 const businesses = [
@@ -34,7 +60,7 @@ const businesses = [
     logo: logo2,
     alt: "OTO",
     description:
-      "End-to-end bulk logistics & stevedoring experts.",
+      "End-to-end bulk logistics and stevedoring experts across India’s East Coast.",
     path: "https://otovizag.com/",
   },
   {
@@ -208,7 +234,7 @@ const BusinessCard = ({ business }) => {
 
           "&:hover": {
             transform: {
-              md: "translateY(-10px)",
+              md: "translateY(0px)",
             },
             borderColor: {
               md: "#42104F",
@@ -247,7 +273,7 @@ const BusinessCard = ({ business }) => {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            px: 1.3,
+            //  px: 1.3,
             mb: {
               md: 2.5,
             },
@@ -270,18 +296,18 @@ const BusinessCard = ({ business }) => {
 
         <Typography
           sx={{
-            color: "#202124",
+            color: "#000000",
             fontFamily: 'IBM Plex Sans',
 
             fontSize: {
               xs: 12.5,
               sm: 14,
-              md: 17,
+              md: 19,
             },
 
             lineHeight: {
               xs: 1.35,
-              md: 1.4,
+              md: 1.5,
             },
 
             fontWeight: 400,
@@ -332,7 +358,7 @@ const BusinessCard = ({ business }) => {
 
               fontSize: {
                 sm: 9,
-                md: 15,
+                md: 18,
               },
 
               lineHeight: 1,
@@ -372,44 +398,56 @@ const BusinessCard = ({ business }) => {
 const OurBusinessesSection = ({
   scrollMarginTop = { xs: "20vh", md: 0 },
 }) => {
+  const reducedMotion = useReducedMotion();
 
-  // const sectionRef = useRef(null);
-  // const progressTrackRef = useRef(null);
-  // const reducedMotion = useReducedMotion();
-  // const isMobile = useMediaQuery("(max-width:899px)");
-
-  // const { scrollYProgress } = useScroll({
-  //   target: progressTrackRef,
-  //   offset: isMobile
-  //     ? ["start 20vh", "end 20vh"]
-  //     : ["start start", "end start"],
-  // });
   return (
     <Box
       id="businesses"
       component="section"
       sx={{
-        //  backgroundColor: "#FFFFFF",
         py: {
           xs: 5,
           sm: 7,
           md: 5,
         },
+        scrollMarginTop,
         fontFamily: '"IBM Plex Sans", sans-serif',
       }}
     >
       <Container
         maxWidth={false}
         sx={{
-          maxWidth: "1220px",
           px: {
             xs: 2.8,
             sm: 4,
-            md: 3.2,
           },
         }}
       >
-        <Box
+        <MotionBox
+          initial={
+            reducedMotion
+              ? false
+              : {
+                opacity: 0,
+                y: 35,
+              }
+          }
+          whileInView={
+            reducedMotion
+              ? {}
+              : {
+                opacity: 1,
+                y: 0,
+              }
+          }
+          viewport={{
+            once: false,
+            amount: 0.4,
+          }}
+          transition={{
+            duration: 0.7,
+            ease: [0.22, 1, 0.36, 1],
+          }}
           sx={{
             mb: {
               xs: 4,
@@ -436,7 +474,7 @@ const OurBusinessesSection = ({
                 md: 34,
               },
               lineHeight: 1.15,
-              fontWeight: 700,
+              fontWeight: 600,
               letterSpacing: "-0.02em",
               textTransform: "uppercase",
             }}
@@ -446,7 +484,6 @@ const OurBusinessesSection = ({
 
           <Typography
             sx={{
-              // maxWidth: 900,
               mx: {
                 xs: 0,
                 md: "auto",
@@ -463,11 +500,18 @@ const OurBusinessesSection = ({
             }}
           >
             Discover the diverse ventures we operate, each built with quality,
-            innovation, &amp; customer commitment at its core.
+            innovation, and customer commitment at its core.
           </Typography>
-        </Box>
+        </MotionBox>
 
-        <Box
+        <MotionBox
+          variants={reducedMotion ? undefined : gridVariants}
+          initial={reducedMotion ? false : "hidden"}
+          whileInView={reducedMotion ? undefined : "visible"}
+          viewport={{
+            once: false,
+            amount: 0.12,
+          }}
           sx={{
             display: "grid",
             gridTemplateColumns: {
@@ -482,12 +526,20 @@ const OurBusinessesSection = ({
           }}
         >
           {businesses.map((business) => (
-            <BusinessCard key={business.id} business={business} />
+            <MotionBox
+              key={business.id}
+              variants={reducedMotion ? undefined : cardVariants}
+              sx={{
+                minWidth: 0,
+                height: "100%",
+              }}
+            >
+              <BusinessCard business={business} />
+            </MotionBox>
           ))}
-        </Box>
+        </MotionBox>
       </Container>
     </Box>
   );
 };
-
 export default OurBusinessesSection;

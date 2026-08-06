@@ -16,6 +16,79 @@ const mobileMenuItems =
     ];
 
 export default function HeaderV2() {
+
+    // const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    // const navigate = useNavigate();
+    // const location = useLocation();
+
+    // const easeInOutCubic = (progress) => {
+    //     return progress < 0.5
+    //         ? 4 * progress * progress * progress
+    //         : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+    // };
+
+    // const smoothScrollTo = ({
+    //     targetY,
+    //     duration = 1100,
+    // }) => {
+    //     const startY = window.scrollY;
+    //     const distance = targetY - startY;
+    //     const startTime = performance.now();
+
+    //     const animateScroll = (currentTime) => {
+    //         const elapsedTime = currentTime - startTime;
+
+    //         const progress = Math.min(
+    //             elapsedTime / duration,
+    //             1
+    //         );
+
+    //         const easedProgress = easeInOutCubic(progress);
+
+    //         window.scrollTo({
+    //             top: startY + distance * easedProgress,
+    //             left: 0,
+    //         });
+
+    //         if (progress < 1) {
+    //             window.requestAnimationFrame(animateScroll);
+    //         }
+    //     };
+
+    //     window.requestAnimationFrame(animateScroll);
+    // };
+
+    // const goToSection = (sectionId) => {
+    //     const section = document.getElementById(sectionId);
+
+    //     if (!section) return;
+
+    //     const headerOffset = 20;
+
+    //     const sectionTop =
+    //         section.getBoundingClientRect().top +
+    //         window.scrollY -
+    //         headerOffset;
+
+    //     smoothScrollTo({
+    //         targetY: sectionTop,
+    //         duration: 1200,
+    //     });
+    // };
+
+    // const navigateToSection = (sectionId) => {
+    //     if (location.pathname === "/") {
+    //         goToSection(sectionId);
+    //         return;
+    //     }
+
+    //     navigate("/", {
+    //         state: {
+    //             scrollTo: sectionId,
+    //         },
+    //     });
+    // };
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const navigate = useNavigate();
     const location = useLocation();
@@ -27,6 +100,8 @@ export default function HeaderV2() {
             section.scrollIntoView({
                 behavior: "smooth",
                 block: "start",
+                block: "center", 
+                inline: "nearest"
             });
         }
     };

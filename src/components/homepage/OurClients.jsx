@@ -1,8 +1,10 @@
+
+import { useMemo } from "react";
+import { useReducedMotion } from "framer-motion";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 
-// Replace these imports with your actual client logo paths.
 import dalmiaLogo from "../../assets/images/clients/dalmia.webp";
 import ashokaLogo from "../../assets/images/clients/ashoka.webp";
 import dhunseriLogo from "../../assets/images/clients/dhunseri.webp";
@@ -21,73 +23,73 @@ const clients = [
   },
   {
     id: 2,
+    name: "Dhendia Tea",
+  },
+  {
+    id: 3,
     name: "Ashoka Pulp & Paper",
     logo: ashokaLogo,
     logoWidth: "82%",
   },
   {
-    id: 3,
+    id: 4,
+    name: "Makrapara Tea",
+  },
+  {
+    id: 5,
     name: "Dhunseri Tea & Industries",
     logo: dhunseriLogo,
     logoWidth: "78%",
   },
   {
-    id: 4,
+    id: 6,
+    name: "Singhania Tea",
+  },
+  {
+    id: 7,
     name: "Client",
     logo: sunLogo,
     logoWidth: "50%",
   },
   {
-    id: 5,
+    id: 8,
+    name: "Ranichera Tea",
+  },
+  {
+    id: 9,
     name: "Ellenbarrie Industrial Gases Ltd",
     logo: ellenbarrieLogo,
     logoWidth: "84%",
   },
   {
-    id: 6,
+    id: 10,
+    name: "Kuchli Bari Tea",
+  },
+  {
+    id: 11,
     name: "Goodricke",
     logo: goodrickeLogo,
     logoWidth: "52%",
   },
   {
-    id: 7,
+    id: 12,
+    name: "Looksan Tea",
+  },
+  {
+    id: 13,
     name: "The Grob Tea Co. Ltd.",
     logo: grobTeaLogo,
     logoWidth: "76%",
   },
   {
-    id: 8,
-    name: "Longview Tea",
-    logo: longviewLogo,
-    logoWidth: "58%",
-  },
-  {
-    id: 9,
-    name: "Dhendia Tea",
-  },
-  {
-    id: 10,
-    name: "Makrapara Tea",
-  },
-  {
-    id: 11,
-    name: "Singhania Tea",
-  },
-  {
-    id: 12,
-    name: "Ranichera Tea",
-  },
-  {
-    id: 13,
-    name: "Kuchli Bari Tea",
-  },
-  {
     id: 14,
-    name: "Looksan Tea",
+    name: "Mech Para Tea",
   },
   {
     id: 15,
-    name: "Mech Para Tea",
+    name: "Longview Tea",
+    logo: longviewLogo,
+    logoWidth: "58%",
   },
   {
     id: 16,
@@ -103,6 +105,55 @@ const clients = [
   },
 ];
 
+/**
+ * Alternates logo and text cards separately in both marquee rows:
+ *
+ * Row 1: Logo → Text → Logo → Text
+ * Row 2: Logo → Text → Logo → Text
+ */
+function createAlternatingRows(items) {
+  const logoClients = items.filter((client) => Boolean(client.logo));
+  const textClients = items.filter((client) => !client.logo);
+
+  const firstRowLogos = logoClients.filter(
+    (_, index) => index % 2 === 0
+  );
+
+  const secondRowLogos = logoClients.filter(
+    (_, index) => index % 2 !== 0
+  );
+
+  const firstRowTexts = textClients.filter(
+    (_, index) => index % 2 === 0
+  );
+
+  const secondRowTexts = textClients.filter(
+    (_, index) => index % 2 !== 0
+  );
+
+  const alternateItems = (logos, texts) => {
+    const result = [];
+    const maximumLength = Math.max(logos.length, texts.length);
+
+    for (let index = 0; index < maximumLength; index += 1) {
+      if (logos[index]) {
+        result.push(logos[index]);
+      }
+
+      if (texts[index]) {
+        result.push(texts[index]);
+      }
+    }
+
+    return result;
+  };
+
+  return {
+    firstRow: alternateItems(firstRowLogos, firstRowTexts),
+    secondRow: alternateItems(secondRowLogos, secondRowTexts),
+  };
+}
+
 const Corner = ({ position }) => {
   const isTop = position.includes("top");
   const isLeft = position.includes("left");
@@ -115,14 +166,17 @@ const Corner = ({ position }) => {
         bottom: !isTop ? { xs: 8, md: 14 } : "auto",
         left: isLeft ? { xs: 8, md: 14 } : "auto",
         right: !isLeft ? { xs: 8, md: 14 } : "auto",
+
         width: {
           xs: 7,
           md: 8,
         },
+
         height: {
           xs: 7,
           md: 8,
         },
+
         borderColor: "#A58AAF",
         borderStyle: "solid",
         borderWidth: 0,
@@ -141,27 +195,39 @@ const ClientCard = ({ client }) => {
     <Box
       sx={{
         position: "relative",
-        minWidth: 0,
-        aspectRatio: {
-          xs: "1 / 1.08",
-          sm: "1 / 1",
-          md: "1.32 / 1",
+
+        width: {
+          xs: 150,
+          sm: 190,
+          md: 220,
         },
+
+        height: {
+          xs: 105,
+          sm: 125,
+          md: 150,
+        },
+
+        flexShrink: 0,
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+
         px: {
-          xs: 1,
-          sm: 1.5,
-          md: 2,
+          xs: 1.5,
+          sm: 2,
+          md: 2.5,
         },
+
         py: {
           xs: 1.5,
           md: 2,
         },
+
         bgcolor: "#FFFFFF",
         border: "1px solid #E5E3E6",
         overflow: "hidden",
+
         transition:
           "transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease",
 
@@ -169,6 +235,10 @@ const ClientCard = ({ client }) => {
           transform: "translateY(-3px)",
           borderColor: "#CDBED2",
           boxShadow: "0 12px 28px rgba(45, 26, 50, 0.08)",
+        },
+
+        "&:hover .client-logo": {
+          transform: "scale(1.04)",
         },
       }}
     >
@@ -180,45 +250,47 @@ const ClientCard = ({ client }) => {
       {client.logo ? (
         <Box
           component="img"
+          className="client-logo"
           src={client.logo}
-          alt={client.name}
+          alt={`${client.name} logo`}
           loading="lazy"
           sx={{
             display: "block",
             width: client.logoWidth || "70%",
             maxWidth: "100%",
+
             maxHeight: {
               xs: "62%",
               md: "68%",
             },
+
             objectFit: "contain",
             transition: "transform 180ms ease",
-
-            ".MuiBox-root:hover &": {
-              transform: "scale(1.03)",
-            },
           }}
         />
       ) : (
         <Typography
           sx={{
-            maxWidth: "100%",
+            maxWidth: "90%",
             color: "#272427",
             textAlign: "center",
+
             fontSize: {
-              xs: 10,
-              sm: 12,
-              md: 15,
-              lg: 16,
+              xs: 12,
+              sm: 14,
+              md: 16,
             },
-            lineHeight: 1.25,
+
+            lineHeight: 1.3,
             fontWeight: 700,
             textTransform: "uppercase",
+
             letterSpacing: {
               xs: "0.01em",
               md: "0.025em",
             },
-            wordBreak: "break-word",
+
+            overflowWrap: "anywhere",
           }}
         >
           {client.name}
@@ -228,29 +300,123 @@ const ClientCard = ({ client }) => {
   );
 };
 
+const MarqueeRow = ({
+  clients: rowClients,
+  reverse = false,
+  reducedMotion,
+}) => {
+  return (
+    <Box
+      sx={{
+        width: "100%",
+        overflow: "hidden",
+
+        "&:hover .our-clients-track": {
+          animationPlayState: "paused",
+        },
+      }}
+    >
+      <Box
+        className="our-clients-track"
+        sx={{
+          display: "flex",
+          width: "max-content",
+          willChange: "transform",
+
+          animation: reducedMotion
+            ? "none"
+            : `${reverse
+              ? "ourClientsMarqueeReverse"
+              : "ourClientsMarquee"
+            } 32s linear infinite`,
+
+          "@keyframes ourClientsMarquee": {
+            from: {
+              transform: "translateX(0)",
+            },
+            to: {
+              transform: "translateX(-50%)",
+            },
+          },
+
+          "@keyframes ourClientsMarqueeReverse": {
+            from: {
+              transform: "translateX(-50%)",
+            },
+            to: {
+              transform: "translateX(0)",
+            },
+          },
+        }}
+      >
+        {[0, 1].map((copy) => (
+          <Box
+            key={copy}
+            aria-hidden={copy === 1 ? "true" : undefined}
+            sx={{
+              display: "flex",
+              flexShrink: 0,
+
+              gap: {
+                xs: 1,
+                sm: 1.5,
+                md: 2.2,
+              },
+
+              pr: {
+                xs: 1,
+                sm: 1.5,
+                md: 2.2,
+              },
+            }}
+          >
+            {rowClients.map((client) => (
+              <ClientCard
+                key={`${copy}-${client.id}`}
+                client={client}
+              />
+            ))}
+          </Box>
+        ))}
+      </Box>
+    </Box>
+  );
+};
+
 const OurClients = () => {
+  const reducedMotion = useReducedMotion();
+
+  const { firstRow, secondRow } = useMemo(
+    () => createAlternatingRows(clients),
+    []
+  );
+
   return (
     <Box
       component="section"
+      id="our-clients"
       sx={{
-        // bgcolor: "#FFFFFF",
+        width: "100%",
         overflow: "hidden",
       }}
     >
       <Container
         maxWidth={false}
         sx={{
-          maxWidth: "1220px",
+          maxWidth: "100%",
+
           px: {
-            xs: 2.5,
-            sm: 3.5,
-            md: 5,
+            xs: 0,
+            sm: 0,
+            md: 4,
           },
+
           pt: {
             xs: 5,
             sm: 6,
             md: 5,
           },
+
           pb: {
             xs: 6,
             sm: 8,
@@ -266,16 +432,26 @@ const OurClients = () => {
               sm: 4.5,
               md: 6,
             },
+
+            px: {
+              xs: 2.5,
+              sm: 3.5,
+              md: 5,
+            },
+
             color: "#242124",
+
             textAlign: {
               xs: "left",
               md: "center",
             },
+
             fontSize: {
               xs: 21,
               sm: 26,
               md: 34,
             },
+
             lineHeight: 1.1,
             fontWeight: 700,
             textTransform: "uppercase",
@@ -288,22 +464,23 @@ const OurClients = () => {
         <Box
           sx={{
             display: "grid",
-            gridTemplateColumns: {
-              xs: "repeat(4, minmax(0, 1fr))",
-              sm: "repeat(4, minmax(0, 1fr))",
-              md: "repeat(5, minmax(0, 1fr))",
-            },
+
             gap: {
-              xs: 1,
-              sm: 1.5,
-              md: 2.2,
+              xs: 1.6,
+              md: 3,
             },
-            alignItems: "stretch",
           }}
         >
-          {clients.map((client) => (
-            <ClientCard key={client.id} client={client} />
-          ))}
+          <MarqueeRow
+            clients={firstRow}
+            reducedMotion={reducedMotion}
+          />
+
+          <MarqueeRow
+            clients={secondRow}
+            reverse
+            reducedMotion={reducedMotion}
+          />
         </Box>
       </Container>
     </Box>

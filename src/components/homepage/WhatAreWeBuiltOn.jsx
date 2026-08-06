@@ -52,7 +52,7 @@ const ValueCard = ({ item }) => {
                 minHeight: {
                     xs: 154,
                     sm: 180,
-                    md: 450,
+                    md: 470,
                 },
                 display: "flex",
                 flexDirection: "column",
@@ -64,7 +64,7 @@ const ValueCard = ({ item }) => {
                 px: {
                     xs: 2.7,
                     sm: 3,
-                    md: 3.4,
+                    md: 3.8,
                 },
                 pt: {
                     xs: 2.4,
@@ -112,7 +112,7 @@ const ValueCard = ({ item }) => {
                     fontSize: {
                         xs: 16,
                         sm: 18,
-                        md: 25,
+                        md: 24,
                     },
                     lineHeight: 1.2,
                     fontWeight: 600,
@@ -130,11 +130,11 @@ const ValueCard = ({ item }) => {
                         sm: "85%",
                         md: "100%",
                     },
-                    color: "#7C837D",
+                    color: "#1C1B1F",
                     fontSize: {
-                        xs: 12,
+                        xs: 13,
                         sm: 14,
-                        md: 18,
+                        md: 19,
                     },
                     lineHeight: {
                         xs: 1.5,
@@ -193,7 +193,7 @@ const ValueCard = ({ item }) => {
                         fontSize: {
                             xs: 11,
                             sm: 12,
-                            md: 18,
+                            md: 20,
                         },
                         lineHeight: 1,
                         fontWeight: 600,
@@ -266,14 +266,14 @@ const WhatAreWeBuiltOn = () => {
                                 md: 1.8,
                             },
                             color: "#202124",
-                            fontFamily: '"IBM Plex Sans", sans-serif',
+                            fontFamily: 'IBM Plex Sans',
                             fontSize: {
                                 xs: 21,
                                 sm: 28,
                                 md: 34,
                             },
                             lineHeight: 1.15,
-                            fontWeight: 700,
+                            fontWeight: 600,
                             letterSpacing: "-0.02em",
                             textTransform: "uppercase",
                         }}
@@ -287,7 +287,7 @@ const WhatAreWeBuiltOn = () => {
                             fontSize: {
                                 xs: 14,
                                 sm: 16,
-                                md: 20,
+                                md: 22,
                             },
                             lineHeight: 1.4,
                             fontWeight: 400,

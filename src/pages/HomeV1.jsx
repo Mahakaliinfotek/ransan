@@ -28,6 +28,7 @@ import MarketsAndReach from "../components/homepage/MarketsAndReach";
 import OurClients from "../components/homepage/OurClients";
 import WhatAreWeBuiltOn from "../components/homepage/WhatAreWeBuiltOn";
 import OurBusinessesSection from "../components/homepage/OurBusinessesSection";
+import TrustedBySection from "../components/homepage/TrustedBySection";
 
 export default function HomePageV1() {
     return (
@@ -66,6 +67,7 @@ export default function HomePageV1() {
             <WhatMakesUsDifferents />
             <MarketsAndReach />
             <OurClients />
+
             <WhatAreWeBuiltOn />
             <OurBusinessesSection />
 

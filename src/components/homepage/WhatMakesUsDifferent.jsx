@@ -265,13 +265,14 @@ const WhatMakesUsDifferents = () => {
                             md: 5,
                         },
                         color: "#202124",
+                        fontFamily: 'IBM Plex Sans',
                         fontSize: {
-                            xs: 22,
+                            xs: 21,
                             sm: 28,
-                            md: 36,
+                            md: 34,
                         },
                         lineHeight: 1.15,
-                        fontWeight: 700,
+                        fontWeight: 600,
                         letterSpacing: "-0.02em",
                         textAlign: {
                             xs: "left",

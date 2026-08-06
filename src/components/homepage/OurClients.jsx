@@ -13,6 +13,9 @@ import ellenbarrieLogo from "../../assets/images/clients/ellenbarrie.webp";
 import goodrickeLogo from "../../assets/images/clients/goodricke.webp";
 import grobTeaLogo from "../../assets/images/clients/grobtea.webp";
 import longviewLogo from "../../assets/images/clients/longview.webp";
+import Visa_Steel from "../../assets/images/clients/Visa_Steel.webp";
+import super_smelters_limited_logo from "../../assets/images/clients/super_smelters_limited_logo.webp";
+
 
 const clients = [
   {
@@ -95,9 +98,24 @@ const clients = [
     id: 16,
     name: "Zurantee Tea",
   },
+
+
+  {
+    id: 15,
+    name: "Super Smelters Limited",
+    logo: super_smelters_limited_logo,
+    logoWidth: "58%",
+  },
+
   {
     id: 17,
     name: "Gairkhata Tea",
+  },
+  {
+    id: 15,
+    name: "Visa Steel",
+    logo: Visa_Steel,
+    logoWidth: "58%",
   },
   {
     id: 18,
